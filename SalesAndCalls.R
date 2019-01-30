@@ -1,3 +1,5 @@
+# Weight and MPG
+
 library("ggpubr")
 
 # import data
@@ -34,4 +36,11 @@ res
 #   0.6325270 0.9542427
 # sample estimates:
 #   cor 
-# 0.8646318 
+# 0.8646318
+
+
+## Testing the significance of correlation coefficient --
+# 1. find test stats t, 2. find critical value t
+
+# Problem
+# 
