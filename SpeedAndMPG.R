@@ -52,7 +52,15 @@ coeffs
 # 12.989247    1.580645 
 
 # now fit the prediction using the estimated regression equation
-MPG = 30
+MPG = 40
+# linear equation y_hat = a + bx, where a is the slope-intercept, and b is the slope
 Speed = coeffs[1]+coeffs[2]*MPG
 Speed # Predicted speed is 60.41
+
+# data(package = .packages(all.available = TRUE))
+# co2 <- CO2
+# head(co2, 10)
+# summary(co2)
+# # uptake: a numeric vector of ambient carbon dioxide concentrations (mL/L).
+
 
