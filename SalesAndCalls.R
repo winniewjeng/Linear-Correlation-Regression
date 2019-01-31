@@ -17,8 +17,24 @@ ggscatter(my_data, x = "Sales.Calls", y = "Copiers.Sold",
 r <- cor(my_data$Sales.Calls, my_data$Copiers.Sold)
 # r = 0.865
 n <-length(my_data$Sales.Calls)
-# n = 15, assuming x and y have equal numbers of data
+# n = 15, assuming x and y have equal numbers of data, df = 13
 
 # Alternatively, we can get data by calling the Pearson correlation test function
 # res <- cor.test(my_data$Sales.Calls, my_data$Copiers.Sold, method = "pearson")
-# res r = 0.8646318 
+# res r = 0.8646318
+
+## Test the significance of the correlation coefficient r
+
+# H null: There's no correlation b/n the num of sales calls and copiers sold, rho = 0
+# H alt: There is correlation b/n the num of sales calls and copiers sold, rho != 0
+
+# critical value t -- two-tail t test
+alpha = 0.05
+t.half.alpha = qt(1-alpha/2, df = n-2) # 1-alpha because of the right tail, df = 13
+c(-t.half.alpha, t.half.alpha) # (-2.16 2.16)
+
+# test stats t:
+ts_t <- (r*sqrt(n-2))/sqrt(1-r^2) 
+ts_t #
+
+
