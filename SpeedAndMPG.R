@@ -34,28 +34,33 @@ c(t.alpha) # cv t = 2.13
 ts_t <- (r*sqrt(n-2))/sqrt(1-r^2) 
 ts_t # ts_t = 5.75
 
-# Reject the null hypothesis. There is a strong and positive (r = 0.994) correlation
+# Conclusion: Reject the null hypothesis. There is a strong and positive (r = 0.994) correlation
 # between the speed and mpg
 
-
-# create a fit linear regression model, lm, with indepen. var, depen. var, dataframe
-my_data.lm = lm(Speed.x ~ MPG.y, data = my_data)
-my_data.lm
-#Coefficients:
-# (Intercept)        MPG.y  
-# 12.989        1.581  
-
+## Linear Regression
 # extract the parameters of the estimated regression equation with the coeffs function.
-coeffs = coefficients(my_data.lm); 
+coeffs = coefficients(my_data.lm);
 coeffs
 # (Intercept)       MPG.y 
 # 12.989247    1.580645 
 
+## Alternatively, use a diff method to create the same fit-linear regression model, lm,
+## with indepen. var, depen. var, dataframe
+# my_data.lm = lm(Speed.x ~ MPG.y, data = my_data)
+# my_data.lm
+## Coefficients:
+## (Intercept)        MPG.y  
+## 12.989        1.581
+
+# Making prediction
 # now fit the prediction using the estimated regression equation
 MPG = 40
 # linear equation y_hat = a + bx, where a is the slope-intercept, and b is the slope
 Speed = coeffs[1]+coeffs[2]*MPG
 Speed # Predicted speed is 60.41
+
+# summary
+summary(my_data.lm)
 
 # data(package = .packages(all.available = TRUE))
 # co2 <- CO2
