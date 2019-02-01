@@ -70,7 +70,20 @@ cv_t <- t.alpha; cv_t
 # cv_t = 1.77
 
 # slope test stats t:
-test_slope_t <- summary(my_data.lm)$coef[,"t value"][2]; test_slope_t
+test_slope_t <- summary(my_data.lm)$coef[,"t value"][2]; 
+test_slope_t # test_slope_t = 6.205
 
-# summary(my_data.lm)
+# Conclusion: reject H null. The slope of the line b is greater than 0. Hence, the indep. var
+# is an aid in predicting the dependent variable. Forecast of copiers sold should be accurate
+
+## Find Coefficient of Determination r^2
+r_squared <- summary(my_data.lm)$r.squared; 
+r_squared # r^2 = 0.748
+# Interpretation: 74.8% of total variation in dep var y [copiers sold] is accounted for by 
+# variation in indep var x [calls made]
+
+# Find standard error of estimate s_yx, aka. residual standard error
+SEE <- summary(my_data.lm)$sigma; 
+SEE # 
+summary(my_data.lm)
 
