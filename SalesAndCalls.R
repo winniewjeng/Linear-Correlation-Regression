@@ -84,6 +84,11 @@ r_squared # r^2 = 0.748
 
 # Find standard error of estimate s_yx, aka. residual standard error
 SEE <- summary(my_data.lm)$sigma; 
-SEE # 
-summary(my_data.lm)
+SEE # s_yx = 6.72
+# Interpretation: A measure of the dispersion of the observed values around the line of 
+# regression for a given value of x. If SEE is small, data are relatively close to the 
+# regression line and the equation can be used to predict y with little error, vice versa
+
+# Overview
+# summary(my_data.lm)
 
