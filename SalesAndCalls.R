@@ -39,7 +39,7 @@ c(-t.half.alpha, t.half.alpha) # (-2.16 2.16)
 ts_t <- (r*sqrt(n-2))/sqrt(1-r^2) 
 ts_t # t = 6.21
 
-# Conclusion: Reject H null. The correlation between x and y are statistically significant
+# Conclusion: Reject H null. The correlation between x and y is statistically significant
 
 
 
